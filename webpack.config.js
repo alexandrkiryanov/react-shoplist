@@ -11,6 +11,14 @@ var config = {
         filename: 'bundle.js',
         publicPath: "/dist/"
     },
+    plugins: [
+        new webpack.DefinePlugin({
+            'process.env': {
+                DEV_MODE: true,
+                NODE_ENV: JSON.stringify('development')
+            }
+        })
+    ],
     module: {
         rules: [
             {
